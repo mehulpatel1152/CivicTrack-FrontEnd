@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log in · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+
+  <!-- Brand panel -->
+  <div class="auth-brand">
+    <div class="wordmark">CIVIC<span class="dot">·</span>TRACK</div>
+
+    <div class="brand-copy">
+      <div class="eyebrow">Report → Verify → Resolve</div>
+      <h2>Every complaint follows a route. You can watch it move.</h2>
+      <p>Log in to file a new issue, track ones you've already reported, and see exactly which department is handling it.</p>
+
+      <div class="route-line">
+        <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+          <line x1="20" y1="14" x2="380" y2="14" stroke="#4A4E52" stroke-width="2" stroke-dasharray="1 7" stroke-linecap="round"/>
+          <circle cx="20" cy="14" r="5" fill="#E8A23D"/>
+          <circle cx="92" cy="14" r="4" fill="#6B6F6A"/>
+          <circle cx="164" cy="14" r="4" fill="#6B6F6A"/>
+          <circle cx="236" cy="14" r="4" fill="#6B6F6A"/>
+          <circle cx="308" cy="14" r="4" fill="#6B6F6A"/>
+          <circle cx="380" cy="14" r="4" fill="#6B6F6A"/>
+          <text x="20" y="38" text-anchor="middle" class="stop-label active">CREATED</text>
+          <text x="92" y="38" text-anchor="middle" class="stop-label">VERIFIED</text>
+          <text x="164" y="38" text-anchor="middle" class="stop-label">ASSIGNED</text>
+          <text x="236" y="38" text-anchor="middle" class="stop-label">PROGRESS</text>
+          <text x="308" y="38" text-anchor="middle" class="stop-label">DONE</text>
+          <text x="380" y="38" text-anchor="middle" class="stop-label">COMPLETE</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form panel -->
+  <div class="auth-form-panel">
+    <div class="auth-form-wrap">
+      <h1>Welcome back</h1>
+      <p class="auth-subtext">Log in to your CivicTrack account.</p>
+
+      <div class="form-error" id="errorBox"></div>
+
+      <form id="loginForm">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="btn-stamp" id="submitBtn">Log in</button>
+      </form>
+
+      <div class="switch-link">
+        New here? <a href="signup.html">Create an account</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/auth.js"></script>
+</body>
+</html>

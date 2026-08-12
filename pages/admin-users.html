@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Users · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<div id="navbar-mount"></div>
+
+<div class="admin-shell">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+    <h1 style="font-size:1.5rem;">All users</h1>
+    <button id="runEscalationBtn" class="btn-assign" style="padding:9px 16px;">Run escalation check</button>
+  </div>
+  <div id="escalationResult" class="locked-note" style="margin-bottom:16px;"></div>
+  <div id="usersRoot">Loading…</div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/complaints.js"></script>
+<script>renderNavbar("users");</script>
+<script src="../js/admin-users.js"></script>
+<script>
+  document.getElementById("runEscalationBtn").addEventListener("click", async () => {
+    const btn = document.getElementById("runEscalationBtn");
+    const result = document.getElementById("escalationResult");
+    btn.disabled = true;
+    btn.textContent = "Checking…";
+    try {
+      const res = await apiRequest("/api/admin/run-escalation", { method: "POST" });
+      result.textContent = await res.text();
+    } catch (err) {
+      result.textContent = err.message || "Escalation check failed.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Run escalation check";
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Review complaint · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+</head>
+<body>
+
+<div id="navbar-mount"></div>
+
+<div class="review-shell" id="reviewRoot">
+
+  <div class="detail-header" id="reviewHeader"></div>
+
+  <div class="section-block">
+    <h3>Location</h3>
+    <div id="reviewMap" style="height:220px;"></div>
+  </div>
+
+  <div class="section-block">
+    <h3>Submitted photos</h3>
+    <div id="reviewMedia"></div>
+  </div>
+
+  <div class="section-block">
+    <h3>Possible duplicates nearby</h3>
+    <div id="duplicateList"></div>
+  </div>
+
+</div>
+
+<div class="action-bar">
+  <input type="text" id="rejectReason" placeholder="Reason for rejection (required to reject)" />
+  <button class="btn-reject" id="rejectBtn">Reject</button>
+  <button class="btn-verify" id="verifyBtn">Verify</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/complaints.js"></script>
+<script src="../js/detail-api.js"></script>
+<script>renderNavbar("");</script>
+<script src="../js/verifier-review.js"></script>
+</body>
+</html>

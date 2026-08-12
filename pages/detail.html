@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Complaint · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+</head>
+<body>
+
+<div id="navbar-mount"></div>
+
+<div class="detail-shell" id="detailRoot">
+
+  <!-- Main column -->
+  <div>
+    <div class="detail-header" id="detailHeader"></div>
+
+    <div class="section-block">
+      <h3>Location</h3>
+      <div id="detailMap"></div>
+    </div>
+
+    <div class="section-block">
+      <h3>Photos</h3>
+      <div id="mediaGallery"></div>
+    </div>
+
+    <div class="section-block">
+      <h3>Comments</h3>
+      <div id="commentList"></div>
+      <form class="comment-form" id="commentForm">
+        <input type="text" id="commentInput" placeholder="Add a comment…" maxlength="500" />
+        <button type="submit">Post</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Side column -->
+  <div>
+    <div class="section-block">
+      <button class="upvote-btn" id="upvoteBtn">
+        ▲ <span class="upvote-label">Upvote</span> · <span id="upvoteCount">0</span>
+      </button>
+    </div>
+
+    <div class="section-block">
+      <h3>Tracking</h3>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/complaints.js"></script>
+<script src="../js/detail-api.js"></script>
+<script>renderNavbar("");</script>
+<script src="../js/detail.js"></script>
+</body>
+</html>

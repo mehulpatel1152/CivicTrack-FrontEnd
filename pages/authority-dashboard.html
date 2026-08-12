@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<div id="navbar-mount"></div>
+
+<div class="dashboard-shell" id="dashboardRoot">
+  <h1 style="font-size:1.5rem; margin-bottom:20px;">Overview</h1>
+
+  <div class="dashboard-stats" id="statsGrid"></div>
+
+  <div class="section-block">
+    <h3>Department workload (active complaints)</h3>
+    <div id="workloadList"></div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/complaints.js"></script>
+<script>renderNavbar("dashboard");</script>
+<script src="../js/authority-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Map · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css" />
+<style>
+  body { background: var(--paper); }
+  .layout { display: flex; flex-direction: column; height: 100vh; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+  <div id="navbar-mount"></div>
+
+  <div class="app-shell">
+
+    <!-- Filters -->
+    <aside class="filter-rail">
+      <h3>Filter complaints</h3>
+
+      <div class="filter-group">
+        <label for="categoryFilter">Category</label>
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+          <option value="ROAD">Road</option>
+          <option value="GARBAGE">Garbage</option>
+          <option value="WATER">Water</option>
+          <option value="ELECTRICITY">Electricity</option>
+          <option value="OTHER">Other</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="statusFilter">Status</label>
+        <select id="statusFilter">
+          <option value="">All statuses</option>
+          <option value="PENDING">Pending</option>
+          <option value="VERIFIED">Verified</option>
+          <option value="ASSIGNED">Assigned</option>
+          <option value="IN_PROGRESS">In progress</option>
+          <option value="DONE">Done</option>
+          <option value="COMPLETED">Completed</option>
+          <option value="REJECTED">Rejected</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="sortFilter">Sort by</label>
+        <select id="sortFilter">
+          <option value="">Default</option>
+          <option value="nearest">Nearest first</option>
+          <option value="upvotes">Most upvoted</option>
+          <option value="title">Title A–Z</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <button class="btn-locate" id="locateBtn">Use my location</button>
+      </div>
+
+      <div class="filter-group" id="radiusGroup" style="display:none;">
+        <label for="radiusFilter">Within <span id="radiusValue">10 km</span></label>
+        <input type="range" id="radiusFilter" min="1" max="20" value="10" step="1" />
+      </div>
+    </aside>
+
+    <!-- Map + cards -->
+    <main class="main-content">
+      <div class="view-toolbar">
+        <span class="result-count" id="resultCount">Loading complaints…</span>
+        <div class="view-toggle">
+          <button class="active">Map</button>
+          <a href="list.html" style="text-decoration:none;"><button>List</button></a>
+        </div>
+      </div>
+
+      <div style="position:relative; flex:1; min-height:320px;">
+        <div id="map" style="height:100%;"></div>
+        <div class="map-legend" id="mapLegend"></div>
+      </div>
+
+      <div class="card-drawer" id="cardDrawer"></div>
+    </main>
+
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/complaints.js"></script>
+<script>renderNavbar("home");</script>
+<script src="../js/home.js"></script>
+</body>
+</html>

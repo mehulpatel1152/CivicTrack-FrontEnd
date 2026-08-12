@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create user · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<div id="navbar-mount"></div>
+
+<div class="admin-shell">
+  <h1 style="font-size:1.5rem; margin-bottom:6px;">Create a staff account</h1>
+  <p class="lede">Citizens sign themselves up. Use this to create verifiers, authorities, department accounts, and other admins.</p>
+
+  <div class="form-error" id="formError"></div>
+  <div class="form-error" id="formSuccess" style="display:none; background:#E7F3EA; border-left-color:var(--route-green); color:var(--route-green);"></div>
+
+  <form id="createUserForm" class="form-section">
+    <div class="field">
+      <label for="name">Full name</label>
+      <input type="text" id="name" required />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+    </div>
+    <div class="field">
+      <label for="password">Temporary password</label>
+      <input type="password" id="password" required minlength="6" />
+    </div>
+    <div class="field">
+      <label for="role">Role</label>
+      <select id="role" required>
+        <option value="VERIFIER">Verifier</option>
+        <option value="AUTHORITY">Authority</option>
+        <option value="DEPARTMENT">Department</option>
+        <option value="ADMIN">Admin</option>
+      </select>
+    </div>
+    <div class="field" id="departmentField" style="display:none;">
+      <label for="department">Department</label>
+      <select id="department"></select>
+      <div id="noDeptWarning" style="display:none; color:var(--alert-rust); font-size:0.8rem; margin-top:6px;">
+        No departments exist yet. <a href="admin-departments.html" style="color:var(--alert-rust);">Create one first →</a>
+      </div>
+    </div>
+    <button type="submit" class="btn-primary-wide" id="submitBtn">Create user</button>
+  </form>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/complaints.js"></script>
+<script>renderNavbar("create-user");</script>
+<script src="../js/admin-create-user.js"></script>
+</body>
+</html>

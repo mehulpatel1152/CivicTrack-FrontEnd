@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Departments · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<div id="navbar-mount"></div>
+
+<div class="admin-shell">
+  <h1 style="font-size:1.5rem; margin-bottom:20px;">Departments</h1>
+
+  <div id="deptListRoot">Loading…</div>
+
+  <form id="deptForm" class="inline-form">
+    <input type="text" id="deptName" placeholder="New department name (e.g. Water Board)" required />
+    <button type="submit" id="deptSubmit">Add</button>
+  </form>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/complaints.js"></script>
+<script>renderNavbar("departments");</script>
+<script src="../js/admin-departments.js"></script>
+</body>
+</html>

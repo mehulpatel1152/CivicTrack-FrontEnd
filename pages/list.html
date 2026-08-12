@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Browse complaints · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<div id="navbar-mount"></div>
+
+<div class="app-shell">
+
+  <aside class="filter-rail">
+    <h3>Filter complaints</h3>
+
+    <div class="filter-group">
+      <label for="categoryFilter">Category</label>
+      <select id="categoryFilter">
+        <option value="">All categories</option>
+        <option value="ROAD">Road</option>
+        <option value="GARBAGE">Garbage</option>
+        <option value="WATER">Water</option>
+        <option value="ELECTRICITY">Electricity</option>
+        <option value="OTHER">Other</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="statusFilter">Status</label>
+      <select id="statusFilter">
+        <option value="">All statuses</option>
+        <option value="PENDING">Pending</option>
+        <option value="VERIFIED">Verified</option>
+        <option value="ASSIGNED">Assigned</option>
+        <option value="IN_PROGRESS">In progress</option>
+        <option value="DONE">Done</option>
+        <option value="COMPLETED">Completed</option>
+        <option value="REJECTED">Rejected</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="sortFilter">Sort by</label>
+      <select id="sortFilter">
+        <option value="">Default</option>
+        <option value="nearest">Nearest first</option>
+        <option value="upvotes">Most upvoted</option>
+        <option value="title">Title A–Z</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <button class="btn-locate" id="locateBtn">Use my location</button>
+    </div>
+
+    <div class="filter-group" id="radiusGroup" style="display:none;">
+      <label for="radiusFilter">Within <span id="radiusValue">10 km</span></label>
+      <input type="range" id="radiusFilter" min="1" max="20" value="10" step="1" />
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="view-toolbar">
+      <span class="result-count" id="resultCount">Loading complaints…</span>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search title, area, road, pincode…" />
+      </div>
+      <div class="view-toggle">
+        <a href="home.html" style="text-decoration:none;"><button>Map</button></a>
+        <button class="active">List</button>
+      </div>
+    </div>
+
+    <div class="card-grid" id="cardGrid"></div>
+  </main>
+
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/complaints.js"></script>
+<script>renderNavbar("list");</script>
+<script src="../js/list.js"></script>
+</body>
+</html>

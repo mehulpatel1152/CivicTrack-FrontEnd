@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mark as done · CivicTrack</title>
+<link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<div id="navbar-mount"></div>
+
+<div class="review-shell" id="completeRoot">
+
+  <div class="detail-header" id="completeHeader"></div>
+
+  <div class="section-block">
+    <h3>Before photos (submitted by resident)</h3>
+    <div id="beforeMedia"></div>
+  </div>
+
+  <div class="section-block">
+    <h3>Upload after photos</h3>
+    <div class="form-error" id="photoError"></div>
+
+    <div class="dropzone" id="dropzone">
+      Drag after-photos here, or click to browse<br/>JPG, PNG, or WebP · up to 5MB each
+      <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple />
+    </div>
+    <div class="photo-preview-grid" id="previewGrid"></div>
+  </div>
+
+</div>
+
+<div class="action-bar">
+  <button class="btn-verify" id="markDoneBtn" style="max-width:280px;">Mark done</button>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/navbar.js"></script>
+<script src="../js/complaints.js"></script>
+<script src="../js/detail-api.js"></script>
+<script>renderNavbar("");</script>
+<script src="../js/department-complete.js"></script>
+</body>
+</html>
